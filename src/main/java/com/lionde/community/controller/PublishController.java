@@ -50,18 +50,7 @@ public class PublishController {
         model.addAttribute("title", title);
         model.addAttribute("description", description);
         model.addAttribute("tag", tag);
-        User user = null;
-        Cookie[] cookies = request.getCookies();
-        if (cookies != null && cookies.length != 0)
-            for (Cookie cookie : cookies) {
-                if (cookie.getName().equals("token")) {
-                    String token = cookie.getValue();
-                    user = userMapper.findByToken(token);
-                    if (user != null)
-                        request.getSession().setAttribute("user", user);
-                    break;
-                }
-            }
+        User user = (User)request.getSession().getAttribute("user");
 
         Question question = new Question();
         question.setTitle(title);
