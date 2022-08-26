@@ -2,7 +2,7 @@ package com.lionde.community.provider;
 
 import com.alibaba.fastjson.JSON;
 import com.lionde.community.dto.AccessTokenDTO;
-import com.lionde.community.dto.GithubUser;
+import com.lionde.community.provider.dto.GithubUser;
 import okhttp3.*;
 import org.springframework.stereotype.Component;
 
